@@ -29,7 +29,12 @@ class DrawPanel extends JPanel implements MouseListener {
             }
             c.setRectangleLocation(x, y);
             g.drawImage(c.getImage(), x, y, null);
-            x = x + c.getImage().getWidth() + 10;
+            if (i == 2 || i == 5) {
+                y += c.getImage().getHeight() + 10;
+                x = 50;
+            } else {
+                x += c.getImage().getWidth() + 10;
+            }
         }
         g.setFont(new Font("Courier New", Font.BOLD, 20));
         g.drawString("GET NEW CARDS", 150, 120);
